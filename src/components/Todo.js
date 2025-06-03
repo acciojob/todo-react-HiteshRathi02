@@ -26,14 +26,16 @@ export default function Todo(){
             <button onClick={()=>{addTask()}}>Add Todo</button>
         </div>
         <div className="todos">
-            {todo.map((todos,index)=>{
-                return(
-                    <div key={index}>
-                        <span>{todos}</span>
-                        <button onClick={()=>{handleDelete(index)}}>Delete</button>
-                    </div>
-                )
-            })}
+            <ul>
+                {todo.map((todos,index)=>{
+                    return(
+                        <li key={index}>
+                            <span>{todos}</span>
+                            <button onClick={()=>{handleDelete(index)}}>Delete</button>
+                        </li>
+                    )
+                })}
+            </ul>
         </div>
         </>
     )
